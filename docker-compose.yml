@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  metadata:
+    build: ./metadata_server
+    ports:
+      - "8000:8000"
+
+  storage1:
+    build: ./storage_node
+    ports:
+      - "8001:8001"
+
+  storage2:
+    build: ./storage_node
+    ports:
+      - "8002:8002"
