@@ -1,26 +1,24 @@
-# 📁 Mini Distributed File Storage System
+# Distributed File Storage System
 
-## 📝 Description
-
-**Mini Distributed File Storage System** developed using Python and FastAPI. Files uploaded to the system are split into smaller chunks and stored across multiple storage nodes, while a metadata server maintains information about file locations.
+**Distributed File Storage System** developed using Python and FastAPI. Files uploaded to the system are split into smaller chunks and stored across multiple storage nodes, while a metadata server maintains information about file locations.
 
 
-## ✨ Features
+## Features
 
--   📦 File chunking and distributed storage
+-   File chunking and distributed storage
 
--   🗂 Centralized metadata management
+-   Centralized metadata management
 
--   🖥 Multiple storage nodes
+-   Multiple storage nodes
 
--   🔗 REST API based communication
+-   REST API based communication
 
--   📈 Scalable architecture
+-   Scalable architecture
 
--   🐳 Docker-based deployment
+-   Docker-based deployment
 
 
-## 🏗 Architecture
+## Architecture
 
 The system follows a **microservice architecture** where metadata management and storage are handled by separate services.
 
@@ -37,13 +35,13 @@ Storage Nodes
 ```
 
 
-## 🧩 Components
+## Components
 
-### 🧑‍💻 Client
+### Client
 
 -   Uploads files to the metadata server
 
-### 🗃 Metadata Server
+### Metadata Server
 
 -   Splits files into chunks
 
@@ -51,31 +49,31 @@ Storage Nodes
 
 -   Stores metadata about files and chunk locations
 
-### 💾 Storage Nodes
+### Storage Nodes
 
 -   Receive file chunks from metadata server
 
 -   Store chunks in local storage directories
 
 
-## 🛠 Tech Stack
+## Tech Stack
 
--   🐍 Python
+-   Python
 
--   ⚡ FastAPI
+-   FastAPI
 
--   🌐 REST APIs
+-   REST APIs
 
--   🗄 SQLite
+-   SQLite
 
--   🔄 SQLAlchemy
+-   SQLAlchemy
 
--   🐳 Docker
+-   Docker
 
--   📦 Docker Compose
+-   Docker Compose
 
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 distributed-file-storage/
@@ -106,9 +104,9 @@ distributed-file-storage/
 ```
 
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
-### 1️⃣ Create Virtual Environment
+### Create Virtual Environment
 
 ```
 python -m venv venv
@@ -122,22 +120,22 @@ source venv/bin/activate
 ```
 
 
-### 2️⃣ Install Dependencies
+### Install Dependencies
 
 ```
 pip install -r requirements.txt
 ```
 
 
-## ▶️ Running the Project
+## Running the Project
 
-### 🚀 Start Metadata Server
+### Start Metadata Server
 
 ```
 uvicorn metadata_server.app.main:app --port 8000 --reload
 ```
 
-### 💾 Start Storage Nodes (separate terminals)
+### Start Storage Nodes (separate terminals)
 
 ```
 uvicorn storage_node.app.main:app --port 8001 --reload
@@ -145,29 +143,16 @@ uvicorn storage_node.app.main:app --port 8002 --reload
 ```
 
 
-## 🐳 Docker Deployment
+## Docker Deployment
 
-### 🔨 Build and Run Containers
+### Build and Run Containers
 
 ```
 docker-compose up --build
 ```
 
-### ⛔ Stop Containers
+### Stop Containers
 
 ```
 docker-compose down
 ```
-
-
-## 🎯 Design Decisions
-
--   📦 **Chunk-based storage** is used to efficiently handle large files
-
--   🗂 **Metadata server** is separated from storage nodes for scalability
-
--   🌐 **REST APIs** are used for simplicity and easy integration
-
--   ⚡ **FastAPI** is chosen for its lightweight and asynchronous nature
-
--   🐳 **Docker** is used to simulate distributed nodes and simplify deployment
